@@ -1,0 +1,68 @@
+/* Styles for the in-page overlay (lives inside a Shadow DOM) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.wrap {
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 240px;
+}
+
+.card {
+    background: rgba(30, 30, 34, 0.95);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    padding: 10px 12px;
+}
+
+.label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.bar {
+    position: relative;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.fill {
+    height: 100%;
+    width: 0%;
+    background: #4caf50;
+    transition: width 180ms ease, background 180ms ease;
+}
+
+.buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.button {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.hidden {
+    display: none !important;
+}

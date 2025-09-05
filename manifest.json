@@ -1,17 +1,46 @@
 {
   "manifest_version": 3,
-  "name": "Context Health Hello",
-  "version": "0.1.0",
+  "name": "ChatGPT Session Assistant",
+  "version": "0.2.1",
+  "description": "Shows a simple health bar on chat.openai.com and offers one-click summarize/trim prompts.",
   "action": {
-    "default_title": "Context Health Hello",
+    "default_title": "ChatGPT Session Assistant",
     "default_popup": "src/popup.html"
   },
   "background": {
-    "service_worker": "src/serviceWorker.js"
+    "service_worker": "src/scripts/serviceWorker.js"
   },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  }
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/styles/overlay.css"
+      ],
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "src/scripts/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
 }

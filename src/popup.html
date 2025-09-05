@@ -1,24 +1,21 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Context Health Hello</title>
-    <style>
-      body { font-family: system-ui, sans-serif; margin: 12px; min-width: 220px; }
-      h1 { font-size: 16px; margin: 0 0 8px; }
-      button { padding: 6px 10px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
-      .row { display: flex; gap: 8px; align-items: center; }
-      .tiny { color: #666; font-size: 12px; margin-top: 8px; }
-    </style>
-  </head>
-  <body>
-    <h1>👋 Hello, Mat</h1>
-    <p>This is a minimal MV3 extension.</p>
-    <div class="row">
-      <button id="badge">Set badge</button>
-      <button id="clear">Clear badge</button>
-    </div>
-    <p class="tiny">Click “Set badge” to show text on the toolbar icon.</p>
-    <script src="popup.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ChatGPT Session Assistant</title>
+  <link rel="stylesheet" href="styles/popup.css"></style>
+</head>
+
+<body>
+  <h1>ChatGPT Session Assistant</h1>
+  <div class="row">
+    <button id="badge">Show badge</button>
+    <button id="clear">Clear badge</button>
+  </div>
+  <label>Last‑N messages to summarize <input id="lastN" type="number" min="5" max="100" value="20"></label>
+  <p class="tiny">Used by the in‑page overlay's "Summarize & Continue" action.</p>
+  <script src="scripts/popup.js"></script>
+</body>
+
 </html>
